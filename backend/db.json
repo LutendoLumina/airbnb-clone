@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "email": "oliver@gmail.com",
+      "password": "$2a$10$G0EUDUiKUBX8RYMSm3vYjOYfdo.HX9QaE.y9ZuO7Sfr8YK2fnptL6",
+      "id": 1
+    },
+    {
+      "email": "patient@gmail.com",
+      "password": "$2a$10$3YjZrTFojX7bmtmQASKTgelcQ3Ma9fxxqmS6JAFAkuCrjvAfFCgCi",
+      "id": 2
+    },
+    {
+      "email": "damaers@gmail.com",
+      "password": "$2a$10$lfCQACI29s78UMtaF6sHjOCteGp9JdvHPL//L2pZeL8wwM.q45HJi",
+      "id": 3
+    }
+  ],
+  "listings": [
+    {
+      "id": 1,
+      "bath_num": 3,
+      "bed_num": 4,
+      "zip": 23456,
+      "address": "Shomula street",
+      "city": "Pretoria",
+      "street": "Pretorius",
+      "price": 2000,
+      "sq_ft": 4.2,
+      "email": "barb@airbnb.co.za",
+      "userId": 2
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bOGStvOeXyg",
+      "listingId": 1,
+      "startDate": "2026-07-20",
+      "endDate": "2026-07-21",
+      "userId": 1
+    }
+  ]
+}
