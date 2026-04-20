@@ -1,11 +1,26 @@
-import React from 'react'
+import React from "react";
+import Header from "./components/layout/Header";
+import "./App.css"
 
 const App = () => {
   return (
-    <div>
-      <h1>Airbnb Clone</h1>
-    </div>
-  )
-}
+    <div className="app">
+      <Header />
+      {/* Home Page
+            Header
 
-export default App
+            Banner
+              Search
+
+            Card
+
+            Footer
+
+          Search Page
+            Header
+       */}
+    </div>
+  );
+};
+
+export default App;
