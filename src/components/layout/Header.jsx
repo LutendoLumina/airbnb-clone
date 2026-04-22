@@ -1,18 +1,26 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Logo from "../../assets/logo.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import LanguageIcon from "@mui/icons-material/Language";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Avatar } from "@mui/material";
 import { openModal } from "../../actions/modalAction";
+import {logout} from "../../actions/userAction"
 import Login from "../Login";
 import "./Header.css";
 
 const Header = () => {
   const dispatch = useDispatch();
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const openModalHandler = () => {
     dispatch(openModal("open", "login"));
+  };
+
+  const logoutHandler = () => {
+    dispatch(logout());
   };
 
   return (
@@ -29,8 +37,23 @@ const Header = () => {
       <div className="header_right">
         <p>Become a host</p>
         <LanguageIcon />
-        <ExpandMoreIcon />
-        <span onClick={openModalHandler}>Log In</span>
+        <div className="dropdown">
+          <ExpandMoreIcon className="dropbtn" />
+          <div className="dropdown_content">
+            {userInfo ? (
+              <>
+                <span>Account</span>
+                <span onClick={logoutHandler}>Log out</span>
+              </>
+            ) : (
+              <>
+                <span>Sign Up</span>
+                <span onClick={openModalHandler}>Log In</span>
+              </>
+            )}
+            <span>Help</span>
+          </div>
+        </div>
         <Avatar />
       </div>
     </div>
